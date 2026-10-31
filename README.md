@@ -60,12 +60,30 @@ curl http://localhost:5000/health
 ```
 
 Hoặc dùng tệp `.env`: `docker run -d -p 5000:5000 --env-file backend/.env khoi672k5/backend:latest`
+
+## Chạy frontend bằng Docker
+
+Image: `khoi672k5/frontend` trên Docker Hub.
+
+```bash
+# Build image
+docker build -t khoi672k5/frontend:latest ./frontend
+
+# Chạy container, API_URL là địa chỉ backend (đọc lúc chạy, không cần build lại)
+docker run -d --name frontend -p 8080:80 \
+  -e API_URL="http://localhost:5000" \
+  khoi672k5/frontend:latest
+
+# Mở trình duyệt: http://localhost:8080
+```
+
+Khi triển khai trên Render, đặt biến môi trường `API_URL` thành URL backend API.
 ## Liên kết
 
 | Mục | URL |
 |---|---|
 | GitHub | https://github.com/khoi672k5/235689_LeTuanKhoi |
 | Docker Hub Backend | (cập nhật ở Câu 5) |
-| Docker Hub Frontend | (cập nhật ở Câu 6) |
+| https://hub.docker.com/r/khoi672k5/frontend
 | Render Frontend | (cập nhật ở Câu 7) |
 | Render API | (cập nhật ở Câu 8) |
