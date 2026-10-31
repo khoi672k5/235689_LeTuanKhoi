@@ -40,7 +40,26 @@ cd frontend
 npm install
 npm start
 ```
+## Chạy backend bằng Docker
 
+Image: `khoi672k5/backend` trên Docker Hub.
+
+```bash
+# Build image
+docker build -t khoi672k5/backend:latest ./backend
+
+# Chạy container (truyền biến môi trường lúc chạy, không nhúng vào image)
+docker run -d --name backend -p 5000:5000 \
+  -e PORT=5000 \
+  -e MONGODB_URI="<chuoi-ket-noi-mongodb-atlas>" \
+  -e CORS_ORIGIN="*" \
+  khoi672k5/backend:latest
+
+# Kiểm tra
+curl http://localhost:5000/health
+```
+
+Hoặc dùng tệp `.env`: `docker run -d -p 5000:5000 --env-file backend/.env khoi672k5/backend:latest`
 ## Liên kết
 
 | Mục | URL |
