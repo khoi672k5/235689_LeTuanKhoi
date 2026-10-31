@@ -6,3 +6,5 @@ build/
 dist/
 .DS_Store
 *.log
+*.log
+.DS_Store
