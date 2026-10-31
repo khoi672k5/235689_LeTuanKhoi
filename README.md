@@ -83,7 +83,7 @@ Khi triển khai trên Render, đặt biến môi trường `API_URL` thành URL
 | Mục | URL |
 |---|---|
 | GitHub | https://github.com/khoi672k5/235689_LeTuanKhoi |
-| Docker Hub Backend | (cập nhật ở Câu 5) |
+| https://hub.docker.com/r/khoi672k5/backend |
 | https://hub.docker.com/r/khoi672k5/frontend
 | https://web-235689.onrender.com|
-| Render API | (cập nhật ở Câu 8) |
+| https://api-235689.onrender.com |
